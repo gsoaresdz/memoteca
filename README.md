@@ -5,99 +5,99 @@
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/gsoaresdz/memoteca?color=56BEB8">
 </p>
 <p align="center">
-  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0;
-  <a href="#sparkles-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0;
-  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-execucao">Execução</a> &#xa0; | &#xa0;
-  <a href="#memo-estrutura-dos-dados">Estrutura dos Dados</a> &#xa0; | &#xa0;
-  <a href="#memo-licenca">Licença</a> &#xa0; | &#xa0;
-  <a href="https://github.com/gsoaresdz" target="_blank">Autor</a>
+  <a href="#dart-about">About</a> &#xa0; | &#xa0;
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-running">Running</a> &#xa0; | &#xa0;
+  <a href="#memo-data-structure">Data Structure</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/gsoaresdz" target="_blank">Author</a>
 </p>
 <br>
 
-## **:dart: Sobre**
+## **:dart: About**
 
-Este repositório contém um projeto em Angular que funciona como um mural de pensamentos. Os usuários podem criar, visualizar, editar e remover pensamentos de forma simples.
+This repository contains an Angular project that works as a message board. Users can easily create, view, edit and delete thoughts.
 
-## **:sparkles: Funcionalidades**
+## **:sparkles: Features**
 
-:heavy_check_mark: **Criar Pensamento**: cadastro de novos pensamentos
+:heavy_check_mark: **Create Thought**: register new thoughts
 
-:heavy_check_mark: **Listar Pensamentos**: exibição de todos os pensamentos cadastrados
+:heavy_check_mark: **List Thoughts**: display all registered thoughts
 
-:heavy_check_mark: **Editar Pensamento**: atualização de pensamentos existentes
+:heavy_check_mark: **Edit Thought**: update existing thoughts
 
-:heavy_check_mark: **Excluir Pensamento**: remoção de pensamentos
+:heavy_check_mark: **Delete Thought**: remove thoughts
 
-## **:rocket: Tecnologias**
+## **:rocket: Technologies**
 
-As seguintes ferramentas foram usadas neste projeto:
+The following tools were used in this project:
 
 - [Angular](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [JSON-Server](https://github.com/typicode/json-server)
 - [Node.js](https://nodejs.org/)
 
-## **:white_check_mark: Requerimentos**
+## **:white_check_mark: Requirements**
 
-Antes de iniciar, você precisa ter [Node.js](https://nodejs.org/) e [npm](https://www.npmjs.com/) instalados.
+Before starting, you need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 
-## **:checkered_flag: Execucao**
+## **:checkered_flag: Running**
 
-### Clonando o Repositório
+### Cloning the Repository
 
 ```bash
 $ git clone https://github.com/gsoaresdz/memoteca.git
 ```
 
-### Instalando Dependências
+### Installing Dependencies
 
-Navegue até a pasta **memoteca** e instale as dependências do frontend:
-
-```bash
-$ npm install
-```
-
-Em seguida, acesse a pasta **memoteca/backend** e instale as dependências do backend:
+Navigate to the **memoteca** folder and install the frontend dependencies:
 
 ```bash
 $ npm install
 ```
 
-### Iniciando o Backend
+Then go to the **memoteca/backend** folder and install the backend dependencies:
 
-Na pasta **memoteca/backend** execute:
+```bash
+$ npm install
+```
+
+### Starting the Backend
+
+In the **memoteca/backend** folder run:
 
 ```bash
 $ npm start
 ```
 
-### Iniciando o Frontend
+### Starting the Frontend
 
-Na pasta **memoteca** execute:
+In the **memoteca** folder run:
 
 ```bash
 $ npm start
 ```
 
-A aplicação estará disponível em `http://localhost:4200/`.
+The application will be available at `http://localhost:4200/`.
 
-## **:memo: Estrutura dos Dados**
+## **:memo: Data Structure**
 
-Os pensamentos são compostos pelas seguintes propriedades:
+Thoughts are composed of the following properties:
 
 - `id`
 - `conteudo`
 - `autoria`
 - `modelo`
 
-## **:memo: Licenca**
+## **:memo: License**
 
-Este projeto está sob licença do MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
+This project is licensed under the MIT license. For more details, see the [LICENSE](LICENSE) file.
 
-Feito com :heart: por <a href="https://github.com/gsoaresdz" target="_blank">gsoaresdz</a>
+Made with :heart: by <a href="https://github.com/gsoaresdz" target="_blank">gsoaresdz</a>
 
 &#xa0;
 
-<a href="#top">De volta ao topo</a>
+<a href="#top">Back to top</a>

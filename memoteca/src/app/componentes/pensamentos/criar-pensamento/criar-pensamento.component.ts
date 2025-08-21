@@ -25,11 +25,11 @@ export class CriarPensamentoComponent implements OnInit {
       conteudo: ['', Validators.compose([Validators.required, Validators.pattern(/(.|\s)*\S(.|\s)*/)])],
       autoria: ['', Validators.compose([Validators.required, Validators.minLength(3), minusculoValidator])],
       modelo: ['modelo1'],
+      favorito: [false]
     });
   }
 
   criarPensamento() {
-    console.log(this.formulario.get('autoria')?.errors);
     if(this.formulario.valid){
       this.service.criar(this.formulario.value).subscribe(() => {
         this.router.navigate(['/listarPensamento']);

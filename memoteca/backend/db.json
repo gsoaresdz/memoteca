@@ -18,21 +18,21 @@
       "conteudo": "sadsadsa####",
       "autoria": "ddddd",
       "modelo": "modelo1",
-      "favorito": true,
+      "favorito": false,
       "id": 4
     },
     {
       "conteudo": "a",
       "autoria": "aaa",
       "modelo": "modelo1",
-      "favorito": true,
+      "favorito": false,
       "id": 8
     },
     {
       "conteudo": "aaaa",
       "autoria": "aaaaa",
       "modelo": "modelo1",
-      "favorito": true,
+      "favorito": false,
       "id": 9
     },
     {

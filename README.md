@@ -1,97 +1,97 @@
 # Memoteca
 
-Aplicação web desenvolvida com Angular para registrar, listar e organizar pensamentos. O projeto disponibiliza uma interface para criar, editar, favoritar e remover post-its virtuais, além de uma API mockada com **JSON Server** responsável por persistir os dados durante o desenvolvimento.
+Web application built with Angular to register, list, and organize thoughts. The project provides an interface to create, edit, favorite, and delete virtual sticky notes, as well as a mocked API powered by **JSON Server** that persists the data during development.
 
-## Sumário
-- [Visão Geral](#visão-geral)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias](#tecnologias)
-- [Pré-requisitos](#pré-requisitos)
-- [Como executar](#como-executar)
-  - [Clonar o repositório](#1-clonar-o-repositório)
-  - [Instalar dependências](#2-instalar-dependências)
-  - [Iniciar o backend (JSON Server)](#3-iniciar-o-backend-json-server)
-  - [Iniciar o frontend (Angular)](#4-iniciar-o-frontend-angular)
-- [Estrutura de dados](#estrutura-de-dados)
-- [Scripts úteis](#scripts-úteis)
-- [Licença](#licença)
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [How to Run](#how-to-run)
+  - [Clone the repository](#1-clone-the-repository)
+  - [Install dependencies](#2-install-dependencies)
+  - [Start the backend (JSON Server)](#3-start-the-backend-json-server)
+  - [Start the frontend (Angular)](#4-start-the-frontend-angular)
+- [Data structure](#data-structure)
+- [Useful scripts](#useful-scripts)
+- [License](#license)
 
-## Visão Geral
-- **Frontend**: projeto Angular localizado em [`memoteca/`](memoteca/) com proxy configurado para consumir a API local.
-- **Backend**: servidor JSON localizado em [`memoteca/backend/`](memoteca/backend/) expondo o recurso `/pensamentos` com paginação e filtros.
+## Overview
+- **Frontend**: Angular project located at [`memoteca/`](memoteca/) with a proxy configured to consume the local API.
+- **Backend**: JSON Server located at [`memoteca/backend/`](memoteca/backend/) exposing the `/pensamentos` resource with pagination and filters.
 
-## Funcionalidades
-- Cadastro de novos pensamentos com validações de formulário.
-- Listagem paginada com botão "Carregar mais".
-- Busca textual por conteúdo ou autoria.
-- Edição e exclusão de pensamentos existentes.
-- Marcação de favoritos e listagem dedicada "Meus Favoritos".
+## Features
+- Create new thoughts with form validations.
+- Paginated list with a "Load more" button.
+- Text search by content or authorship.
+- Edit and delete existing thoughts.
+- Mark favorites and browse them in the dedicated "My Favorites" list.
 
-## Tecnologias
+## Technologies
 - [Angular 14](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [RxJS](https://rxjs.dev/)
 - [JSON Server](https://github.com/typicode/json-server)
 - [Node.js](https://nodejs.org/)
 
-## Pré-requisitos
-- [Node.js](https://nodejs.org/) (inclui `npm`).
-- Angular CLI instalado globalmente (opcional, mas recomendado): `npm install -g @angular/cli`.
+## Prerequisites
+- [Node.js](https://nodejs.org/) (includes `npm`).
+- Angular CLI installed globally (optional but recommended): `npm install -g @angular/cli`.
 
-## Como executar
+## How to Run
 
-### 1. Clonar o repositório
+### 1. Clone the repository
 ```bash
 git clone https://github.com/gsoaresdz/memoteca.git
 cd memoteca
 ```
 
-### 2. Instalar dependências
-Instale as dependências do frontend e, em seguida, do backend mockado:
+### 2. Install dependencies
+Install the frontend dependencies and then the mocked backend dependencies:
 ```bash
-cd memoteca      # entra no projeto Angular
-npm install      # instala as dependências do frontend
+cd memoteca      # enter the Angular project
+npm install      # install frontend dependencies
 cd backend
-npm install      # instala as dependências do JSON Server
+npm install      # install JSON Server dependencies
 ```
 
-> Observação: mantenha dois terminais ou utilize processos em segundo plano para executar frontend e backend simultaneamente.
+> Tip: keep two terminals open or use background processes to run the frontend and backend simultaneously.
 
-### 3. Iniciar o backend (JSON Server)
-Dentro de `memoteca/backend/` execute:
+### 3. Start the backend (JSON Server)
+Inside `memoteca/backend/` run:
 ```bash
 npm start
 ```
-O servidor será iniciado em `http://localhost:3000` com o endpoint `/pensamentos` definido em [`db.json`](memoteca/backend/db.json).
+The server will be available at `http://localhost:3000` with the `/pensamentos` endpoint defined in [`db.json`](memoteca/backend/db.json).
 
-### 4. Iniciar o frontend (Angular)
-Em outro terminal (ou após voltar da pasta `backend` com `cd ..`), dentro de `memoteca/` execute:
+### 4. Start the frontend (Angular)
+In another terminal (or after returning from `backend` with `cd ..`), inside `memoteca/` run:
 ```bash
 npm start
 ```
-O comando utiliza o `ng serve` com o proxy [`proxy.conf.json`](memoteca/proxy.conf.json). A aplicação ficará disponível em `http://localhost:4200/`.
+The command runs `ng serve` with the [`proxy.conf.json`](memoteca/proxy.conf.json). The application will be available at `http://localhost:4200/`.
 
-## Estrutura de dados
-Cada pensamento possui os seguintes campos:
-| Campo     | Tipo     | Descrição                         |
-|-----------|----------|-----------------------------------|
-| `id`      | `number` | Identificador gerado pelo JSON Server.
-| `conteudo`| `string` | Texto principal do pensamento.
-| `autoria` | `string` | Autor do pensamento.
-| `modelo`  | `string` | Variante visual do card (ex.: `modelo1`).
-| `favorito`| `boolean`| Indica se o pensamento está favoritado.
+## Data structure
+Each thought has the following fields:
+| Field       | Type      | Description                                   |
+|-------------|-----------|-----------------------------------------------|
+| `id`        | `number`  | Identifier generated by JSON Server.          |
+| `conteudo`  | `string`  | Main text of the thought.                     |
+| `autoria`   | `string`  | Author of the thought.                        |
+| `modelo`    | `string`  | Visual variant of the card (e.g., `modelo1`). |
+| `favorito`  | `boolean` | Indicates whether the thought is a favorite.  |
 
-## Scripts úteis
-No diretório `memoteca/`:
-- `npm start`: executa o servidor de desenvolvimento com proxy configurado.
-- `npm run build`: gera a build de produção em `dist/`.
-- `npm test`: executa os testes unitários via Karma.
+## Useful scripts
+In the `memoteca/` directory:
+- `npm start`: runs the development server with the configured proxy.
+- `npm run build`: generates the production build in `dist/`.
+- `npm test`: runs the unit tests via Karma.
 
-No diretório `memoteca/backend/`:
-- `npm start`: inicia o JSON Server observando `db.json`.
+In the `memoteca/backend/` directory:
+- `npm start`: starts JSON Server watching `db.json`.
 
-## Licença
-Este projeto está licenciado sob a [MIT License](LICENSE).
+## License
+This project is licensed under the [MIT License](LICENSE).
 
 ---
-Feito com :heart: por [gsoaresdz](https://github.com/gsoaresdz)
+Made with :heart: by [gsoaresdz](https://github.com/gsoaresdz)

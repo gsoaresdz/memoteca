@@ -1,103 +1,97 @@
-<h1 align="center">Memoteca</h1>
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/gsoaresdz/memoteca?color=56BEB8">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/gsoaresdz/memoteca?color=56BEB8">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gsoaresdz/memoteca?color=56BEB8">
-</p>
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0;
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-running">Running</a> &#xa0; | &#xa0;
-  <a href="#memo-data-structure">Data Structure</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/gsoaresdz" target="_blank">Author</a>
-</p>
-<br>
+# Memoteca
 
-## **:dart: About**
+Aplicação web desenvolvida com Angular para registrar, listar e organizar pensamentos. O projeto disponibiliza uma interface para criar, editar, favoritar e remover post-its virtuais, além de uma API mockada com **JSON Server** responsável por persistir os dados durante o desenvolvimento.
 
-This repository contains an Angular project that works as a message board. Users can easily create, view, edit and delete thoughts.
+## Sumário
+- [Visão Geral](#visão-geral)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Pré-requisitos](#pré-requisitos)
+- [Como executar](#como-executar)
+  - [Clonar o repositório](#1-clonar-o-repositório)
+  - [Instalar dependências](#2-instalar-dependências)
+  - [Iniciar o backend (JSON Server)](#3-iniciar-o-backend-json-server)
+  - [Iniciar o frontend (Angular)](#4-iniciar-o-frontend-angular)
+- [Estrutura de dados](#estrutura-de-dados)
+- [Scripts úteis](#scripts-úteis)
+- [Licença](#licença)
 
-## **:sparkles: Features**
+## Visão Geral
+- **Frontend**: projeto Angular localizado em [`memoteca/`](memoteca/) com proxy configurado para consumir a API local.
+- **Backend**: servidor JSON localizado em [`memoteca/backend/`](memoteca/backend/) expondo o recurso `/pensamentos` com paginação e filtros.
 
-:heavy_check_mark: **Create Thought**: register new thoughts
+## Funcionalidades
+- Cadastro de novos pensamentos com validações de formulário.
+- Listagem paginada com botão "Carregar mais".
+- Busca textual por conteúdo ou autoria.
+- Edição e exclusão de pensamentos existentes.
+- Marcação de favoritos e listagem dedicada "Meus Favoritos".
 
-:heavy_check_mark: **List Thoughts**: display all registered thoughts
-
-:heavy_check_mark: **Edit Thought**: update existing thoughts
-
-:heavy_check_mark: **Delete Thought**: remove thoughts
-
-## **:rocket: Technologies**
-
-The following tools were used in this project:
-
-- [Angular](https://angular.io/)
+## Tecnologias
+- [Angular 14](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [JSON-Server](https://github.com/typicode/json-server)
+- [RxJS](https://rxjs.dev/)
+- [JSON Server](https://github.com/typicode/json-server)
 - [Node.js](https://nodejs.org/)
 
-## **:white_check_mark: Requirements**
+## Pré-requisitos
+- [Node.js](https://nodejs.org/) (inclui `npm`).
+- Angular CLI instalado globalmente (opcional, mas recomendado): `npm install -g @angular/cli`.
 
-Before starting, you need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
+## Como executar
 
-## **:checkered_flag: Running**
-
-### Cloning the Repository
-
+### 1. Clonar o repositório
 ```bash
-$ git clone https://github.com/gsoaresdz/memoteca.git
+git clone https://github.com/gsoaresdz/memoteca.git
+cd memoteca
 ```
 
-### Installing Dependencies
-
-Navigate to the **memoteca** folder and install the frontend dependencies:
-
+### 2. Instalar dependências
+Instale as dependências do frontend e, em seguida, do backend mockado:
 ```bash
-$ npm install
+cd memoteca      # entra no projeto Angular
+npm install      # instala as dependências do frontend
+cd backend
+npm install      # instala as dependências do JSON Server
 ```
 
-Then go to the **memoteca/backend** folder and install the backend dependencies:
+> Observação: mantenha dois terminais ou utilize processos em segundo plano para executar frontend e backend simultaneamente.
 
+### 3. Iniciar o backend (JSON Server)
+Dentro de `memoteca/backend/` execute:
 ```bash
-$ npm install
+npm start
 ```
+O servidor será iniciado em `http://localhost:3000` com o endpoint `/pensamentos` definido em [`db.json`](memoteca/backend/db.json).
 
-### Starting the Backend
-
-In the **memoteca/backend** folder run:
-
+### 4. Iniciar o frontend (Angular)
+Em outro terminal (ou após voltar da pasta `backend` com `cd ..`), dentro de `memoteca/` execute:
 ```bash
-$ npm start
+npm start
 ```
+O comando utiliza o `ng serve` com o proxy [`proxy.conf.json`](memoteca/proxy.conf.json). A aplicação ficará disponível em `http://localhost:4200/`.
 
-### Starting the Frontend
+## Estrutura de dados
+Cada pensamento possui os seguintes campos:
+| Campo     | Tipo     | Descrição                         |
+|-----------|----------|-----------------------------------|
+| `id`      | `number` | Identificador gerado pelo JSON Server.
+| `conteudo`| `string` | Texto principal do pensamento.
+| `autoria` | `string` | Autor do pensamento.
+| `modelo`  | `string` | Variante visual do card (ex.: `modelo1`).
+| `favorito`| `boolean`| Indica se o pensamento está favoritado.
 
-In the **memoteca** folder run:
+## Scripts úteis
+No diretório `memoteca/`:
+- `npm start`: executa o servidor de desenvolvimento com proxy configurado.
+- `npm run build`: gera a build de produção em `dist/`.
+- `npm test`: executa os testes unitários via Karma.
 
-```bash
-$ npm start
-```
+No diretório `memoteca/backend/`:
+- `npm start`: inicia o JSON Server observando `db.json`.
 
-The application will be available at `http://localhost:4200/`.
+## Licença
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
-## **:memo: Data Structure**
-
-Thoughts are composed of the following properties:
-
-- `id`
-- `conteudo`
-- `autoria`
-- `modelo`
-
-## **:memo: License**
-
-This project is licensed under the MIT license. For more details, see the [LICENSE](LICENSE) file.
-
-Made with :heart: by <a href="https://github.com/gsoaresdz" target="_blank">gsoaresdz</a>
-
-&#xa0;
-
-<a href="#top">Back to top</a>
+---
+Feito com :heart: por [gsoaresdz](https://github.com/gsoaresdz)
